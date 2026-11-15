@@ -4997,13 +4997,19 @@ Chilonzor ustaxonangizda qachon tayyor bo‘ladi?`),window.open(`https://t.me/An
         <!-- Rejimlar Almashinuvi -->
         <div class="mode-switcher-nav">
           <button type="button" class="nav-tab-btn ${this.currentView==="configurator"?"active":""}" data-view="configurator" id="tab-config">
-            🛒 Buyurtma Portali va 3D Studiya
+            <span class="tab-icon">🛒</span>
+            <span class="tab-text-full">Buyurtma Portali va 3D Studiya</span>
+            <span class="tab-text-short">Buyurtma</span>
           </button>
           <button type="button" class="nav-tab-btn ${this.currentView==="pitch"?"active-pitch":""}" data-view="pitch" id="tab-pitch">
-            💼 Tanlov Pitchi & Moliyaviy Model
+            <span class="tab-icon">💼</span>
+            <span class="tab-text-full">Tanlov Pitchi & Moliyaviy Model</span>
+            <span class="tab-text-short">Pitch & Model</span>
           </button>
           <button type="button" class="nav-tab-btn ${this.currentView==="tracker"?"active":""}" data-view="tracker" id="tab-tracker">
-            📦 Buyurtmani Kuzatish
+            <span class="tab-icon">📦</span>
+            <span class="tab-text-full">Buyurtmani Kuzatish</span>
+            <span class="tab-text-short">Kuzatish</span>
           </button>
         </div>
 

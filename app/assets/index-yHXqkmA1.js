@@ -5144,7 +5144,9 @@ Chilonzor ustaxonangizda qachon tayyor bo‘ladi?`),window.open(`https://t.me/An
       <!-- Global Navigatsiya Paneli -->
       <nav class="app-navbar">
         <div class="brand-group" id="nav-brand">
-          <div class="brand-icon">🖨️</div>
+          <div class="brand-icon">
+            <img src="./logo_nav.png" alt="Any3DCubic" class="nav-logo-img">
+          </div>
           <div class="brand-text">
             <h1>Toshkent 3D Ustaxonasi</h1>
             <div class="brand-sub">

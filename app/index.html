@@ -35,13 +35,16 @@
         expandToFullscreen();
         document.addEventListener('DOMContentLoaded', expandToFullscreen);
         window.addEventListener('load', expandToFullscreen);
+        window.addEventListener('focus', expandToFullscreen);
+        document.addEventListener('touchstart', expandToFullscreen, { passive: true });
+        document.addEventListener('click', expandToFullscreen, { passive: true });
 
-        // Telegram WebView ochilishi davomida uzluksiz to'liq ekranga chaqirib turish
+        // Telegram WebView ochilishi davomida dastlabki 5 soniya uzluksiz to'liq ekranga yoyib turish
         var count = 0;
         var poller = setInterval(function() {
           count++;
           expandToFullscreen();
-          if (count > 20 || (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.isExpanded)) {
+          if (count > 50) {
             clearInterval(poller);
           }
         }, 100);

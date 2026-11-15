@@ -8,6 +8,45 @@
     
     <!-- Telegram Web App SDK (Avtomatik to'liq ekran va Telegram integratsiyasi) -->
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+      (function() {
+        function expandToFullscreen() {
+          if (window.Telegram && window.Telegram.WebApp) {
+            var tg = window.Telegram.WebApp;
+            try {
+              tg.ready();
+              tg.expand();
+              if (typeof tg.requestFullscreen === 'function') {
+                tg.requestFullscreen();
+              }
+              if (typeof tg.enableClosingConfirmation === 'function') {
+                tg.enableClosingConfirmation();
+              }
+              if (typeof tg.setHeaderColor === 'function') {
+                tg.setHeaderColor('#090e1a');
+              }
+              if (typeof tg.setBackgroundColor === 'function') {
+                tg.setBackgroundColor('#090e1a');
+              }
+            } catch (err) {}
+          }
+        }
+        // Birinchi millisekunddayoq to'liq ekranga yoyish
+        expandToFullscreen();
+        document.addEventListener('DOMContentLoaded', expandToFullscreen);
+        window.addEventListener('load', expandToFullscreen);
+
+        // Telegram WebView ochilishi davomida uzluksiz to'liq ekranga chaqirib turish
+        var count = 0;
+        var poller = setInterval(function() {
+          count++;
+          expandToFullscreen();
+          if (count > 20 || (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.isExpanded)) {
+            clearInterval(poller);
+          }
+        }, 100);
+      })();
+    </script>
 
     <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,8 +55,8 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖨️</text></svg>" />
-    <script type="module" crossorigin src="./assets/index-CE58aYkp.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-C6s5OiQG.css">
+    <script type="module" crossorigin src="./assets/index-DPjrAJAI.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Cvzjl156.css">
   </head>
   <body>
     <div id="app"></div>
